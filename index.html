@@ -9,6 +9,17 @@
         ></script>
     </head>
     <body>
-        <script></script>
+        <script>
+            const keyPressed = [];
+            const secretCode = 'wesbos';
+            window.addEventListener('keyup', (e) => {
+                keyPressed.push(e.key);
+                keyPressed.splice(-secretCode.length - 1, keyPressed.length);
+                if (keyPressed.join('').includes(secretCode)) {
+                    console.log('DING DING!');
+                    cornify_add();
+                }
+            });
+        </script>
     </body>
 </html>
